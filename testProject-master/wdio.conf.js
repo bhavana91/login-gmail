@@ -20,7 +20,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/index.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,11 +55,7 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
-       /*  'goog:chromeOptions': {
-            'excludeSwitches': ['enable-automation'],
-            //'args': ['--disable-web-security'],
-            //"useAutomationExtension": false
-        } */
+                            
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -76,7 +72,7 @@ exports.config = {
     //
     // Set specific log levels per logger
     // loggers:
-    // - webdriver, webdriverio
+    //  webdriver, webdriverio
     // - @wdio/applitools-service, @wdio/browserstack-service, @wdio/devtools-service, @wdio/sauce-service
     // - @wdio/mocha-framework, @wdio/jasmine-framework
     // - @wdio/local-runner, @wdio/lambda-runner
@@ -96,13 +92,13 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: 'https://kalp.salesmate.io/login.html',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
-    // if browser driver or grid doesn't send response
+    // if Selenium Grid doesn't send response
     connectionRetryTimeout: 90000,
     //
     // Default request retries count
@@ -128,8 +124,13 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
- 
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+        useCucumberStepReporter: false
+    }]],
+    
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -160,6 +161,7 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     // beforeSession: function (config, capabilities, specs) {
+        
     // },
     /**
      * Gets executed before test execution begins. At this point you can access to all global
@@ -167,23 +169,16 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function (capabilities, specs) {
-        expect=require('chai').expect;
-        browser.addCommand('getUrlAndTitle', function () {
-            // `this` refers to the `browser` scope
-            return {
-                url: this.getUrl(),
-                title: this.getTitle()
-            };
-        });
-    },
+    // before: function (capabilities, specs) {
+    // },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
-    // beforeCommand: function (commandName, args) {
-    // },
+    //   beforeCommand: function (commandName, args) {
+       
+    //  },
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -191,29 +186,29 @@ exports.config = {
     // beforeSuite: function (suite) {
     // },
     /**
-     * Function to be executed before a test (in Mocha/Jasmine) starts.
+     * Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
+     * @param {Object} test test details
      */
-    // beforeTest: function (test, context) {
+    // beforeTest: function (test) {
     // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context) {
+    // beforeHook: function () {
     // },
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
      */
-    // afterHook: function (test, context, { error, result, duration, passed, retries }) {
+    // afterHook: function () {
     // },
     /**
-     * Function to be executed after a test (in Mocha/Jasmine).
+     * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
+     * @param {Object} test test details
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    // afterTest: function (test) {
     // },
-
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
