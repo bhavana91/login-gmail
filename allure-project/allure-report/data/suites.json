@@ -1,0 +1,22 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "click on google",
+    "children" : [ {
+      "name" : "should open with google option",
+      "uid" : "2f89c509cfefb661",
+      "parentUid" : "e93683f417f2a13b53ddd623c790adf0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1584007028567,
+        "stop" : 1584007061495,
+        "duration" : 32928
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "e93683f417f2a13b53ddd623c790adf0"
+  } ],
+  "name" : "suites"
+}

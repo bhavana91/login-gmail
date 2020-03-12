@@ -1,0 +1,58 @@
+{
+  "uid" : "2f89c509cfefb661",
+  "name" : "should open with google option",
+  "fullName" : "click on google.should open with google option",
+  "historyId" : "7690e99aa31c98fbe6cfc6ae14cca3fa",
+  "time" : {
+    "start" : 1584007028567,
+    "stop" : 1584007061495,
+    "duration" : 32928
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "click on google"
+  }, {
+    "name" : "testClass",
+    "value" : "click on google"
+  }, {
+    "name" : "testMethod",
+    "value" : "should open with google option"
+  }, {
+    "name" : "package",
+    "value" : "click on google"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "2f89c509cfefb661.json",
+  "parameterValues" : [ "chrome" ]
+}

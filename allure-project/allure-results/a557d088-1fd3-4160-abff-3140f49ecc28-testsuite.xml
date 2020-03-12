@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1584007028567' stop='1584007061497'>
+    <name>click on google</name>
+    <title>click on google</title>
+    <test-cases>
+        <test-case start='1584007028567' status='passed' stop='1584007061495'>
+            <name>should open with google option</name>
+            <title>should open with google option</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

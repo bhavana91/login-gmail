@@ -1,0 +1,22 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "click on google",
+    "children" : [ {
+      "name" : "should open with google option",
+      "uid" : "2f89c509cfefb661",
+      "parentUid" : "b141f33014996d0c038442d2129ab41e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1584007028567,
+        "stop" : 1584007061495,
+        "duration" : 32928
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "b141f33014996d0c038442d2129ab41e"
+  } ],
+  "name" : "packages"
+}
